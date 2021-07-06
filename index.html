@@ -79,13 +79,30 @@
             }
             _result.value += event.target.textContent;
         };
-
+        
 
         const onClickOperator = function (event) {  // high order function for argument
 
             if (numOne) {
+                if (numTwo) {
+                    if (operator === '+') {
+                        numOne = parseInt(numOne) + parseInt(numTwo);
+                        numTwo = '';
+                    } else if (operator === '-') {
+                        numOne -= numTwo;
+                        numTwo = '';
+                    } else if (operator === '*') {
+                        numOne *= numTwo;
+                        numTwo = '';
+                    } else if (operator === '/') {
+                        numOne /= numTwo;
+                        numTwo = '';
+                    }
+                    
+                }             
                 operator = event.target.textContent;
                 _operator.value = event.target.textContent;
+            
             } else {
                 alert("please put number first!");
             }
@@ -98,15 +115,19 @@
                 switch (operator) {
                     case '+':
                         _result.value = parseInt(numOne) + parseInt(numTwo);
+
                         break;
                     case '-':
                         _result.value = parseInt(numOne) - parseInt(numTwo);
+
                         break;
                     case '*':
                         _result.value = parseInt(numOne) * parseInt(numTwo);
+
                         break;
                     case '/':
                         _result.value = parseInt(numOne) / parseInt(numTwo);
+
                         break;
                     default:
                         break;
@@ -114,7 +135,7 @@
             }
         };
 
-        const onClickClear = function() {
+        const onClickClear = function () {
             numOne = '';
             operator = '';
             numTwo = '';
