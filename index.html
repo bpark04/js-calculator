@@ -57,7 +57,7 @@
         <button id="clear">C</button>
         <button id="num-0">0</button>
         <button id="calculate">=</button>
-        <button id="multiply">x</button>
+        <button id="multiply">*</button>
     </div>
 
     <script>
@@ -102,6 +102,7 @@
                 }             
                 operator = event.target.textContent;
                 _operator.value = event.target.textContent;
+                _result.value = numOne;
             
             } else {
                 alert("please put number first!");
@@ -115,15 +116,12 @@
                 switch (operator) {
                     case '+':
                         _result.value = parseInt(numOne) + parseInt(numTwo);
-
                         break;
                     case '-':
                         _result.value = parseInt(numOne) - parseInt(numTwo);
-
                         break;
                     case '*':
                         _result.value = parseInt(numOne) * parseInt(numTwo);
-
                         break;
                     case '/':
                         _result.value = parseInt(numOne) / parseInt(numTwo);
@@ -135,6 +133,7 @@
                 numOne = _result.value;
                 numTwo = '';
                 operator = '';
+                _operator.value = '';
 
             }
         };
