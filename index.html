@@ -114,6 +114,14 @@
             }
         };
 
+        const onClickClear = function() {
+            numOne = '';
+            operator = '';
+            numTwo = '';
+            _operator.value = '';
+            _result.value = '';
+        }
+
         document.querySelector('#num-0').addEventListener('click', onClickNumber);
         document.querySelector('#num-1').addEventListener('click', onClickNumber);
         document.querySelector('#num-2').addEventListener('click', onClickNumber);
@@ -130,7 +138,7 @@
         document.querySelector('#divide').addEventListener('click', onClickOperator);
         document.querySelector('#multiply').addEventListener('click', onClickOperator);
         document.querySelector('#calculate').addEventListener('click', onClickAnswer);
-        document.querySelector('#clear').addEventListener('click', () => { });
+        document.querySelector('#clear').addEventListener('click', onClickClear);
 
     </script>
 
